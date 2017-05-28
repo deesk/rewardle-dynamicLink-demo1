@@ -1,0 +1,16 @@
+
+.wrapper {
+  margin: 10em auto 0 auto;
+  width: 60%;
+}
+.btn-div {
+  margin-top: 2em;
+  text-align: center;
+}
+.btn {
+  width: 20%;
+}
+
+.response {
+  color: purple;
+}
