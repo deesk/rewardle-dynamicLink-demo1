@@ -2,11 +2,11 @@ console.log('d-link');
 
 $(".btn").click(function () {
   var domain = "https://yx55s.app.goo.gl/";
-  var cLink = $('.c-link').val();
-  var sTitle = $('.s-title').val();
-  var sDesc = $('.s-desc').val();
-  var sImg = $('.s-img').val();
-  var option = "SHORT";
+  var cLink = $('.c-link').val(); //content link
+  var sTitle = $('.s-title').val(); // social media title
+  var sDesc = $('.s-desc').val(); // social media description
+  var sImg = $('.s-img').val(); // social media image
+  var option = "SHORT"; // suffix (length of link)
 
  $.ajax({
    type: "POST",
@@ -22,10 +22,16 @@ $(".btn").click(function () {
           "socialTitle": sTitle,
           "socialDescription": sDesc,
           "socialImageLink": sImg
+        },
+        "androidInfo": {
+          "androidPackageName": "com.example.android"
+        },
+        "iosInfo": {
+          "iosBundleId": "com.example.ios"
         }
       },
       "suffix": {
-       "option": option
+        "option": option
       }
     })
   }).done(function(links){
