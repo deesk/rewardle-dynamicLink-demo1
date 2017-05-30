@@ -12,5 +12,16 @@
 }
 
 .response {
-  color: mistyrose;
+  color: blue;
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+  color: #0288d1;
+}
+
+.btn-fb {
+  background-color: #0288d1;
+  border-color: #0288d1;
 }
