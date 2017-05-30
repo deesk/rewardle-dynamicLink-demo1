@@ -1,5 +1,6 @@
 console.log('d-link');
-$(".btn").click(function () {
+
+$(".btn-fb").click(function () {
   var domain = "https://yx55s.app.goo.gl/";
   //content link
   var cLink = $('.c-link').val();
