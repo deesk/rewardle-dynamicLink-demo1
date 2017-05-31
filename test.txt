@@ -1,64 +1,39 @@
-{
-  "dynamicLinkInfo": {
-    "dynamicLinkDomain": string,
-    "link": string,
-    "androidInfo": {
-      "androidPackageName": string,
-      "androidFallbackLink": string,
-      "androidMinPackageVersionCode": string,
-      "androidLink": string
-    },
-    "iosInfo": {
-      "iosBundleId": string,
-      "iosFallbackLink": string,
-      "iosCustomScheme": string,
-      "iosIpadFallbackLink": string,
-      "iosIpadBundleId": string,
-      "iosAppStoreId": string
-    },
-    "navigationInfo": {
-      "enableForcedRedirect": boolean,
-    },
-    "analyticsInfo": {
-      "googlePlayAnalytics": {
-        "utmSource": string,
-        "utmMedium": string,
-        "utmCampaign": string,
-        "utmTerm": string,
-        "utmContent": string,
-        "gclid": string
-      },
-      "itunesConnectAnalytics": {
-        "at": string,
-        "ct": string,
-        "mt": string,
-        "pt": string
+console.log('branch');
+
+$(".btn-brw").click(function () {
+
+  var alias = $('.alias').val();
+  var camp = $('.camp').val();
+  var chan = $('.channel').val();
+  var ogTitle = $('.og-t').val();
+  var ogDesc = $('.og-d').val();
+  var ogIU = $('.og-iu').val();
+  var ogDU = $('.og-du').val();
+
+  $.ajax({
+    type: "POST",
+    url: "https://api.branch.io/v1/url",
+    contentType: "application/json",
+    processData: false,
+    data:JSON.stringify({
+    	"branch_key": b_key,
+      "alias" : alias,
+    	"campaign": camp,
+    	"channel" : chan,
+    	"data" : {
+        "$og_title": ogTitle,
+        "$og_description": ogDesc,
+        "$og_image_url": ogIU,
+        "$desktop_url":ogDU,
+
       }
-    },
-    "socialMetaTagInfo": {
-      "socialTitle": string,
-      "socialDescription": string,
-      "socialImageLink": string
-    }
-  },
-  "suffix": {
-    "option": "SHORT" or "UNGUESSABLE"
-  }
-}
+    })
+  }).done(function(data){
+      console.log(data);
+  })
+})
 
-
-** variable eg
-
-  var domain = "https://yx55s.app.goo.gl/";
-  var cLink = "http://www.rewardle.com/business";
-  var sTitle = "Rewadle_Banner_Test";
-  var sDesc = "social_media_test";
-  var sImg = "https://media.cdn.gradconnection.com/uploads/5682b86e-59bb-447b-b6a3-3729d569eec4-Rewardle-Banner.png";
-
-
-// "DynamicLink": "https://yx55s.app.goo.gl/?link=http://www.rewardle.com/business",
-// "socialMetaTagInfo": {
-//   "socialTitle": "test1",
-//   "socialDescription": "scocial Media test",
-//   "socialImageLink": "https://www.google.com.au/search?q=rewardle&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjGmP2DnIfUAhXCUZQKHWn8ATsQ_AUICygC&biw=1366&bih=605#imgrc=5vGsyn9Qh7yz1M:"
-// }
+//
+// \"$og_description\": \" description for social media\",
+// \"$og_image_url\": \"https://amazingslider.com/wp-content/uploads/2012/12/dandelion.jpg \",
+// \"$desktop_url\": \"http://blog.rewardle.com/\"

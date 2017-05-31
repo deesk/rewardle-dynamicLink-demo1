@@ -1,6 +1,7 @@
 console.log('d-link');
 
 $(".btn-fb").click(function () {
+  // api reqest domain name
   var domain = "https://yx55s.app.goo.gl/";
   //content link
   var cLink = $('.c-link').val();

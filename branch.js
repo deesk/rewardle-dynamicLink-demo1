@@ -24,12 +24,16 @@ $(".btn-brw").click(function () {
         "$og_title": ogTitle,
         "$og_description": ogDesc,
         "$og_image_url": ogIU,
-        "$desktop_url":ogDU
+        "$android_deeplink_path": "rewardle://07A200212032AINYY",
+        "$ios_deeplink_path": "rewardle://07A200212032AINYY"
+        
+
+        // "$desktop_url":ogDU,
+
       }
     })
   }).done(function(data){
       console.log(data);
-
   })
 })
 
