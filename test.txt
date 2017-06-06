@@ -37,3 +37,39 @@ $(".btn-brw").click(function () {
 // \"$og_description\": \" description for social media\",
 // \"$og_image_url\": \"https://amazingslider.com/wp-content/uploads/2012/12/dandelion.jpg \",
 // \"$desktop_url\": \"http://blog.rewardle.com/\"
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="deesk.helloworld">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:name="io.branch.referral.BranchApp">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <data android:scheme="droidtest" android:host="open" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_jnwyQm9rMljCFzofsdD41baaBDevBLKg" />
+
+    </application>
+
+</manifest>

@@ -23,12 +23,17 @@ $(".btn-fb").click(function () {
       "dynamicLinkInfo": {
         "dynamicLinkDomain": "yx55s.app.goo.gl",
         "link": cLink,
-          "socialMetaTagInfo": {
-            "socialTitle": sTitle,
-            "socialDescription": sDesc,
-            "socialImageLink": sImg
-          }
+        "socialMetaTagInfo": {
+          "socialTitle": sTitle,
+          "socialDescription": sDesc,
+          "socialImageLink": sImg
         },
+        "googlePlayAnalytics": {
+          "utmSource": "webSite",
+          "utmMedium": "Facebook",
+          "utmCampaign": "test"
+        }
+      },
         "suffix": {
           "option": option
         }

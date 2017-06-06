@@ -4,11 +4,11 @@ $(".btn-brw").click(function () {
 
   var alias = $('.alias').val();
   var camp = $('.camp').val();
-  var chan = $('.channel').val();
+  var chan = $('.chan').val();
   var ogTitle = $('.og-t').val();
   var ogDesc = $('.og-d').val();
   var ogIU = $('.og-iu').val();
-  var ogDU = $('.og-du').val();
+  // var ogDU = $('.og-du').val();
 
   $.ajax({
     type: "POST",
@@ -16,20 +16,22 @@ $(".btn-brw").click(function () {
     contentType: "application/json",
     processData: false,
     data:JSON.stringify({
-    	"branch_key": b_key,
-      "alias" : alias,
-    	"campaign": camp,
-    	"channel" : chan,
+    	branch_key: bDKey,
+      alias : alias,
+    	campaign: camp,
+    	channel : "Facebook",
+      test: "deesk/Success",
+      feature: "dashboard",
     	"data" : {
         "$og_title": ogTitle,
         "$og_description": ogDesc,
         "$og_image_url": ogIU,
-        "$android_deeplink_path": "rewardle://07A200212032AINYY",
-        "$ios_deeplink_path": "rewardle://07A200212032AINYY"
-        
-
+        "$one_time_use": "false",
+        "$android_deepview": "branch_default",
+        "$ios_url": "http://www.rewardle.com/"
+        // "$android_url": "rewardle://07A200212032AINYY",
+        // "$custom_sms_text" : "test test {{link}}"
         // "$desktop_url":ogDU,
-
       }
     })
   }).done(function(data){
