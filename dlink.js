@@ -22,16 +22,22 @@ $(".btn-fb").click(function () {
     data:JSON.stringify({
       "dynamicLinkInfo": {
         "dynamicLinkDomain": "yx55s.app.goo.gl",
-        "link": cLink,
+        "link": "https://www.rewardle.com/s/scan?qrcode=" + cLink,
+        "androidInfo": {
+          "androidPackageName": "com.rewardle.rewardle",
+          "androidFallbackLink": "http://www.rewardle.com/"
+        },
         "socialMetaTagInfo": {
           "socialTitle": sTitle,
           "socialDescription": sDesc,
           "socialImageLink": sImg
         },
-        "googlePlayAnalytics": {
-          "utmSource": "webSite",
-          "utmMedium": "Facebook",
-          "utmCampaign": "test"
+        "analyticsInfo": {
+          "googlePlayAnalytics": {
+            "utmSource": "webSite",
+            "utmMedium": "Facebook",
+            "utmCampaign": "test"
+          }
         }
       },
         "suffix": {

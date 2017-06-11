@@ -1,6 +1,7 @@
 console.log('branch');
 
 $(".btn-brw").click(function () {
+  console.log("branch app name: rewdaleDemo");
 
   var alias = $('.alias').val();
   var camp = $('.camp').val();
@@ -16,22 +17,26 @@ $(".btn-brw").click(function () {
     contentType: "application/json",
     processData: false,
     data:JSON.stringify({
-    	branch_key: bDKey,
+    	branch_key: rDBranchKey,
       alias : alias,
+      type: 2, //show up under quick link
     	campaign: camp,
     	channel : "Facebook",
-      test: "deesk/Success",
-      feature: "dashboard",
+      feature: "api",
+      tags: [alias],
     	"data" : {
+        "name": alias,// appears in android hello_world app
+        "address": ogIU,// appears in hello_world android app
+        "$marketing_title": "apitest02", // title appears in quick view
+        // social media
         "$og_title": ogTitle,
         "$og_description": ogDesc,
         "$og_image_url": ogIU,
+
         "$one_time_use": "false",
-        "$android_deepview": "branch_default",
+        "$android_deepview": "default_template",
         "$ios_url": "http://www.rewardle.com/"
-        // "$android_url": "rewardle://07A200212032AINYY",
-        // "$custom_sms_text" : "test test {{link}}"
-        // "$desktop_url":ogDU,
+
       }
     })
   }).done(function(data){
